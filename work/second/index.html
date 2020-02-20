@@ -21,12 +21,31 @@
     </div>
     <script src="../../common/js/jquery.js"></script>
     <script>
+      // $(function() {
+        $('.modal-show').click(fadeIn);
+        function fadeIn() {
+          $('.modal').fadeIn();
+        };
+
+        $('.modal-close').on("click", fadeOut);
+        function fadeOut() {
+          $('.modal').fadeOut();
+        };
+      // });
       // 今回やるのはモーダルです。
       // .modal-show をクリックすることで .modal をfadeInさせる。
       // .modal-close をクリックで .modal をfadeOutさせる。
       // .click() クリック時のイベントを登録する。
       // .fadeIn() 一定時間かけてフェードインする。
       // .fadeOut() 一定時間かけてフェードアウトする。
+
+      // .modal-showをクリックして.modalのウィンドウがフェードインが実行されるような関数を呼び出す。
+      // またバツの.modal-closeをクリックすると.modalがフェードアウトされる。
+      //　引数なかったら４００ミリ秒でフェードアウトする。
+      // function→DOMの構築が完了してからjQueryが実行されるようになっている。
+      // onメソッドは、引数としてイベント名とfunctionを設定するとイベント発生時に(ここではfadeOutの)処理が実行される。動的な要素には未対応。複数のイベント処理を実行する時に有効で、イベントを２つ以上設定できる。
+      // また、onは後から追加した要素にもイベント処理が実行できる。
+      // clickメソッドは、引数として関数名を記述すると、指定した要素をクリックした後に引数の関数を実行する処理がされる。クリックイベントのみ実行したい時に有効。
     </script>
   </body>
 </html>

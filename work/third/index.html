@@ -24,13 +24,24 @@
     </div>
     <script src="../../common/js/jquery.js"></script>
     <script>
+      $(function() {
+        $('.nav li').click(function() {
+          var num = $(this).index();
+          $('.contents li').addClass('is-hidden').eq(num).removeClass('is-hidden');
+        });
+      });
       // 今回やるのはタブメニューです。
       // navの小要素であるliをクリックして、contents内の小要素であるli要素を表示させる。
       // .index() 要素のindexを取得します。
       // .eq() 引数に応じたindexの要素を指定します。
       // .addClass() クラスを追加します。
       // .removeClass() クラスを削除します。
+
+      // navのliをクリックして中カッコ内の関数を実行する。
+      // クリックされたタブの要素(.nav li)のインデックス番号を変数numに代入
+      // contentsの子要素であるli要素にis-hiddenクラスを追加してコンテンツを非表示にした上で、クリックしたインデックス番号に相当する要素を指定して、その要素に対してはis-hiddenクラスを削除することで、コンテンツが表示されるようにする。
+      // でも何でis-hiddenクラスの追加によって文章が非表示になるのか分からん。。。そういうスタイルになっているのか？
+      // 今更だけど1stのlargeクラス追加によって文字が大きくなる仕組みもわからなかった。。。→CSSでスタイル指定(display:none)している
     </script>
   </body>
 </html>
-
