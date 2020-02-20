@@ -86,16 +86,17 @@
     <script>
       $(function() {
         $('.select').change(function() {
-          var num = $(this).val();
-          if(num = 'all'){
-            $('.list').children('li').each(num, function() {$(this).show()
-            });
-          } else {
-            $('.list').children('li').each(num, function() {
-             if(num = $(this).data('category-type')){
+          var selectBoxValue = $(this).val();
+          if(selectBoxValue == 'all'){
+            $('.list').data('category-type')
+              console.log($(this));
               $(this).show();
+          } else {
+            $('.list').children('li').each(function(index, element) {
+             if(selectBoxValue == $(this).data('category-type')){
+              $(element).show();
               } else {
-                $(this).hide();
+                $(element).hide();
               };
            });
           }
